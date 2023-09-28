@@ -8,6 +8,22 @@
         <circle id="coin" cx="100" cy="100" r="50" fill="gold" />
     </svg>
     <button id="flipButton">Flip Coin</button>
-    <script src="script.js"></script>
+    
+    <script>
+        const coin = document.getElementById("coin");
+        const flipButton = document.getElementById("flipButton");
+
+        // Function to randomly rotate the coin (simulate a coin flip)
+        function flipCoin() {
+            // Generate a random rotation angle between 0 and 360 degrees
+            const randomRotation = Math.floor(Math.random() * 360);
+
+            // Apply the rotation to the coin using SVG's transform attribute
+            coin.setAttribute("transform", `rotate(${randomRotation} 100 100)`);
+        }
+
+        // Add a click event listener to the "Flip Coin" button
+        flipButton.addEventListener("click", flipCoin);
+    </script>
 </body>
 </html>
