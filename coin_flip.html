@@ -27,7 +27,7 @@
         </g>
         <!-- Tails Side -->
         <g class="tails">
-            <circle cx="50" cy="50" r="45" fill="#999"/>
+            <circle cx="50" cy="50" r="45" fill="#ccc"/>
             <text x="50" y="60" font-size="24" text-anchor="middle">Tails</text>
         </g>
     </svg>
@@ -42,17 +42,17 @@
 
             // Randomly decide if it's heads or tails
             const isHeads = Math.random() >= 0.5;
-            
+
             // Reset previous transforms
             coin.style.transform = '';
 
             // Animate the coin flip
             const numberOfFlips = Math.floor(Math.random() * 5) + 3; // 3 to 7 flips
-            const rotation = isHeads ? 360 * numberOfFlips : 360 * numberOfFlips + 180;
+            const rotation = isHeads ? 360 * numberOfFlips : -360 * numberOfFlips;
 
             // Use CSS transition for flip animation
             coin.style.transition = 'transform 1s';
-            coin.style.transform = `rotateY(${rotation}deg)`;
+            coin.style.transform = `rotate(${rotation}deg)`;
 
             // After the animation completes, show the final side
             setTimeout(() => {
