@@ -23,9 +23,57 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease-in-out;
+            cursor: pointer;
         }
         .gallery img:hover {
             transform: scale(1.05);
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .modal-description {
+            text-align: center;
+            color: white;
+            font-size: 18px;
+            margin-top: 15px;
+            padding: 10px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -34,12 +82,50 @@
     <h1 style="text-align: center; margin-top: 20px;">Engineering Image Gallery</h1>
     
     <div class="gallery">
-        <img src="/Data-Website/images/submarine3.jpg" alt="Image 1">
-        <img src="/Data-Website/images/soldering practice.jpg" alt="Image 2">
-        <img src="/Data-Website/images/arduino_car2.jpg" alt="Image 3">
-        <img src="/Data-Website/images/arduino_car.jpg" alt="Image 4">
-        <img src="/Data-Website/images/Solder 4-digit LED Electronic Desk Clock picture 1.jpg" alt="Image 5">
+        <img src="/Data-Website/images/submarine3.jpg" alt="Submarine Project" class="gallery-image">
+        <img src="/Data-Website/images/soldering practice.jpg" alt="Soldering Practice" class="gallery-image">
+        <img src="/Data-Website/images/arduino_car2.jpg" alt="Arduino Car - Model 2" class="gallery-image">
+        <img src="/Data-Website/images/arduino_car.jpg" alt="Arduino Car" class="gallery-image">
+        <img src="/Data-Website/images/Solder 4-digit LED Electronic Desk Clock picture 1.jpg" alt="Soldering Desk Clock" class="gallery-image">
     </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="modalDescription" class="modal-description"></div>
+    </div>
+
+    <script>
+        // Get all images in the gallery
+        const galleryImages = document.querySelectorAll('.gallery-image');
+        
+        // Get modal elements
+        const modal = document.getElementById("myModal");
+        const modalImage = document.getElementById("modalImage");
+        const modalDescription = document.getElementById("modalDescription");
+
+        // Function to open modal and display clicked image and description
+        galleryImages.forEach(image => {
+            image.addEventListener('click', function() {
+                modal.style.display = "block";  // Show the modal
+                modalImage.src = this.src;  // Set the clicked image as modal image
+                modalDescription.innerHTML = this.alt;  // Set the alt text as description
+            });
+        });
+
+        // Function to close the modal
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        // Close the modal if the user clicks anywhere outside the modal
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
