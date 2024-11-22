@@ -54,12 +54,14 @@
             display: flex;
             flex-direction: column; /* Stack image and description vertically */
             align-items: center;
+            padding-bottom: 40px; /* Ensure there's space at the bottom */
         }
 
         .modal-content {
             width: 100%;
             max-width: 100%;
             border-radius: 8px;
+            object-fit: contain; /* Ensure image does not stretch */
         }
 
         .modal-description {
@@ -70,6 +72,7 @@
             padding: 10px;
             background-color: #f7f7f7;
             border-radius: 8px;
+            width: 100%; /* Make description width match the image */
         }
 
         .close {
@@ -96,6 +99,7 @@
     <h1 style="text-align: center; margin-top: 20px;">Engineering Image Gallery</h1>
     
     <div class="gallery">
+        <!-- Add descriptions for each image using the 'data-description' attribute -->
         <img src="/Data-Website/images/submarine3.jpg" alt="Submarine Project" class="gallery-image" data-description="A detailed view of the submarine engineering project.">
         <img src="/Data-Website/images/soldering practice.jpg" alt="Soldering Practice" class="gallery-image" data-description="Learning the basics of soldering in a workshop environment.">
         <img src="/Data-Website/images/arduino_car2.jpg" alt="Arduino Car - Model 2" class="gallery-image" data-description="An Arduino-controlled car designed for robotics enthusiasts.">
