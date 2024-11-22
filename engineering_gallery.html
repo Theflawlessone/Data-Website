@@ -1,7 +1,50 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Engineering Projects By: Alexandria Machacon</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* 5 images per row */
+            gap: 10px;
+            padding: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center; margin-top: 20px;">Simple Image Gallery</h1>
+    
+    <div class="gallery">
+        <img src="/Data-Website/images/submarine3.jpg" alt="Image 1">
+        <img src="/Data-Website/images/soldering practice.jpg" alt="Image 2">
+        <img src="/Data-Website/images/arduino_car2.jpg" alt="Image 3">
+        <img src="/Data-Website/images/arduino_car.jpg" alt="Image 4">
+        <img src="/Data-Website/images/Solder 4-digit LED Electronic Desk Clock picture 1.jpg" alt="Image 5">
+        <img src="/Data-Website/images/image6.jpg" alt="Image 6">
+        <img src="/Data-Website/images/image7.jpg" alt="Image 7">
+        <img src="/Data-Website/images/image8.jpg" alt="Image 8">
+        <img src="/Data-Website/images/image9.jpg" alt="Image 9">
+        <img src="/Data-Website/images/image10.jpg" alt="Image 10">
+    </div>
+
+</body>
+</html>
