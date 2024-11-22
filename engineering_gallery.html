@@ -82,11 +82,11 @@
     <h1 style="text-align: center; margin-top: 20px;">Engineering Image Gallery</h1>
     
     <div class="gallery">
-        <img src="/Data-Website/images/submarine3.jpg" alt="Submarine Project" class="gallery-image">
-        <img src="/Data-Website/images/soldering practice.jpg" alt="Soldering Practice" class="gallery-image">
-        <img src="/Data-Website/images/arduino_car2.jpg" alt="Arduino Car - Model 2" class="gallery-image">
-        <img src="/Data-Website/images/arduino_car.jpg" alt="Arduino Car" class="gallery-image">
-        <img src="/Data-Website/images/Solder 4-digit LED Electronic Desk Clock picture 1.jpg" alt="Soldering Desk Clock" class="gallery-image">
+        <img src="/Data-Website/images/submarine3.jpg" alt="Submarine Project" class="gallery-image" data-description="A detailed view of the submarine engineering project.">
+        <img src="/Data-Website/images/soldering practice.jpg" alt="Soldering Practice" class="gallery-image" data-description="Learning the basics of soldering in a workshop environment.">
+        <img src="/Data-Website/images/arduino_car2.jpg" alt="Arduino Car - Model 2" class="gallery-image" data-description="An Arduino-controlled car designed for robotics enthusiasts.">
+        <img src="/Data-Website/images/arduino_car.jpg" alt="Arduino Car" class="gallery-image" data-description="Building an Arduino-powered car for a robotics project.">
+        <img src="/Data-Website/images/Solder 4-digit LED Electronic Desk Clock picture 1.jpg" alt="Soldering Desk Clock" class="gallery-image" data-description="A close-up of a 4-digit LED electronic desk clock project.">
     </div>
 
     <!-- Modal -->
@@ -110,7 +110,7 @@
             image.addEventListener('click', function() {
                 modal.style.display = "block";  // Show the modal
                 modalImage.src = this.src;  // Set the clicked image as modal image
-                modalDescription.innerHTML = this.alt;  // Set the alt text as description
+                modalDescription.innerHTML = this.getAttribute('data-description');  // Set the description from data-attribute
             });
         });
 
